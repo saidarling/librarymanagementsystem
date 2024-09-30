@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<link rel="stylesheet" type="text/css" th:href="@{/CSS/login.css}">
+</head>
+<body>
+	
+	 <div class="container">
+      <h1 class="form-title">Registration</h1>
+      <form th:action="@{/register/save}" th:object="${newAccount}" method="POST">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Username</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Username"  th:field="${newAccount.userName}"/>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password" th:field="${newAccount.password}"/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email" th:field="${newAccount.email}"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Phone Number" th:field="${newAccount.phoneNumber}"/>
+          </div>
+          <div class="user-input-box">
+            <label for="password">FirstName</label>
+            <input type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="Enter Firstname" th:field="${newAccount.firstName}"/>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">LastName</label>
+            <input type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name" th:field="${newAccount.lastName}"/>
+          </div>
+          
+          <div class="user-input-box">
+            <label for="confirmPassword">Address</label>
+            <input type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Address" th:field="${newAccount.address}"/>
+          </div>
+          
+          <div class="user-input-box">
+            <label for="confirmPassword">City</label>
+            <input type="text"
+                    id="city"
+                    name="city"
+                    placeholder="City" th:field="${newAccount.city}"/>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register">
+        </div>
+        <br><a href="login">Go back to login</a>
+      </form>
+    </div>
+</body>
+</html>
